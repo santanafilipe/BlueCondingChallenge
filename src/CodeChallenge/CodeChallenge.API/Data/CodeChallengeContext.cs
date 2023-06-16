@@ -8,6 +8,5 @@ namespace CodeChallenge.API.Data
         public CodeChallengeContext(DbContextOptions<CodeChallengeContext> options)
             : base(options)
         { }
-            public DbSet<Customer> Customers { get; set; }
     }
 }
