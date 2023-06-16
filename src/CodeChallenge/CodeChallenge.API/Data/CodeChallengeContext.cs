@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CodeChallenge.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CodeChallenge.API.Data
 {
@@ -7,5 +8,7 @@ namespace CodeChallenge.API.Data
         public CodeChallengeContext(DbContextOptions<CodeChallengeContext> options)
             : base(options)
         { }
+
+        public DbSet<ShortUrls> ShortUrls { get; set; }
     }
 }

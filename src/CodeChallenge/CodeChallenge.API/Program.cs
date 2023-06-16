@@ -1,5 +1,7 @@
 
 using CodeChallenge.API.Data;
+using CodeChallenge.API.Repositories;
+using CodeChallenge.API.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +14,8 @@ namespace CodeChallenge.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddScoped<IShortUrlservice, ShortUrlservice>();
+            builder.Services.AddScoped<IShortUrlRepository, ShortUrlRepository>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
